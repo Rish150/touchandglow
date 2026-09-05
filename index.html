@@ -33,26 +33,41 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="icon" type="image/png" href="touchandglow.jpeg">
+  <link rel="apple-touch-icon" href="touchandglow.jpeg">
   <link
     href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Work+Sans:wght@400;500;600&display=swap"
     rel="stylesheet">
   <style>
     :root {
-      --espresso: #1B1210;
-      --espresso-2: #241A17;
-      --espresso-3: #2E211C;
-      --cream: #F6EFE3;
-      --cream-2: #FBF8F1;
-      --wine: #7A2632;
-      --wine-deep: #591A24;
-      --gold: #C6A15B;
-      --gold-soft: #DCC48C;
-      --gold-line: rgba(198, 161, 91, 0.4);
-      --ink: #1B1310;
-      --ink-soft: #6B584C;
-      --line: rgba(27, 19, 16, 0.12);
-      --line-cream: rgba(246, 239, 227, 0.16);
-      --radius-sm: 4px;
+      /* Luxury blush pink + champagne gold palette */
+      --espresso: #35141F;
+      --espresso-2: #481A2A;
+      --espresso-3: #612238;
+      --cream: #FFF8F8;
+      --cream-2: #FFF1F4;
+      --wine: #B83F69;
+      --wine-deep: #8F2850;
+      --gold: #D4AF5A;
+      --gold-soft: #F0D58A;
+      --gold-line: rgba(212, 175, 90, 0.48);
+      --ink: #3B1724;
+      --ink-soft: #765764;
+      --line: rgba(184, 63, 105, 0.14);
+      --line-cream: rgba(255, 248, 248, 0.20);
+      --radius-sm: 10px;
+    }
+
+    /* Gold + pink luxury details */
+    ::selection {
+      background: var(--gold);
+      color: var(--espresso);
+    }
+
+    body {
+      background:
+        radial-gradient(circle at 10% 10%, rgba(255, 213, 224, 0.32), transparent 30%),
+        var(--cream);
     }
 
     * {
@@ -167,16 +182,16 @@
     }
 
     .btn-primary {
-      background: var(--wine);
-      color: var(--cream);
+      background: linear-gradient(135deg, var(--wine), var(--wine-deep));
+      color: #fff;
       border-color: var(--wine);
-      box-shadow: 0 4px 14px rgba(122, 38, 50, 0.25);
+      box-shadow: 0 7px 22px rgba(184, 63, 105, 0.28);
     }
 
     .btn-primary:hover {
-      background: var(--wine-deep);
-      border-color: var(--wine-deep);
-      box-shadow: 0 6px 20px rgba(122, 38, 50, 0.4);
+      background: linear-gradient(135deg, var(--wine-deep), var(--wine));
+      border-color: var(--gold);
+      box-shadow: 0 9px 26px rgba(184, 63, 105, 0.35);
       transform: translateY(-2px);
     }
 
@@ -207,9 +222,10 @@
     }
 
     .frame {
-      padding: 10px;
-      background: var(--cream-2);
+      padding: 8px;
+      background: linear-gradient(145deg, #fff, #ffe9ef);
       border: 1px solid var(--gold-line);
+      box-shadow: 0 10px 28px rgba(184, 63, 105, 0.08);
     }
 
     .frame img {
@@ -221,6 +237,52 @@
 
     .frame.on-dark {
       background: var(--espresso-2);
+    }
+
+
+    .services-head h2,
+    .why-copy h2,
+    .faq h2 {
+      text-wrap: balance;
+    }
+
+    .service-card .frame,
+    .studio-item .frame,
+    .why-media .frame {
+      border-radius: 14px;
+    }
+
+    .price-side {
+      background: linear-gradient(145deg, #FFFDFD 0%, #FFF0F4 100%);
+    }
+
+    .price-side .btn-primary {
+      background: linear-gradient(135deg, var(--wine), var(--wine-deep));
+    }
+
+    @media (max-width: 599px) {
+      .hero {
+        min-height: 690px;
+      }
+
+      .hero h1 {
+        font-size: clamp(36px, 11vw, 54px);
+      }
+
+      .hero-actions .btn {
+        width: 100%;
+      }
+
+      .trust .item {
+        width: 100%;
+        justify-content: center;
+        border-right: none;
+        border-bottom: 1px solid var(--line-cream);
+      }
+
+      .trust .item:last-child {
+        border-bottom: none;
+      }
     }
 
     /* ---------- header ---------- */
@@ -274,6 +336,8 @@
       height: 36px;
       border: 1px solid var(--gold);
       color: var(--gold);
+      background: rgba(212, 175, 90, 0.05);
+      box-shadow: inset 0 0 18px rgba(212, 175, 90, 0.08);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -444,7 +508,9 @@
       content: "";
       position: absolute;
       inset: 0;
-      background: radial-gradient(circle at 30% 40%, rgba(27, 19, 16, 0.25) 0%, rgba(27, 19, 16, 0.7) 50%, rgba(27, 19, 16, 0.96) 100%);
+      background:
+        radial-gradient(circle at 25% 30%, rgba(255, 188, 211, 0.18), transparent 32%),
+        linear-gradient(90deg, rgba(53, 20, 31, 0.45), rgba(53, 20, 31, 0.82) 58%, rgba(53, 20, 31, 0.92));
     }
 
     .hero-inner {
@@ -654,7 +720,7 @@
     }
 
     .forhim {
-      background: linear-gradient(135deg, var(--espresso) 0%, var(--espresso-3) 100%);
+      background: linear-gradient(135deg, #35141F 0%, #7B2B4A 100%);
       color: var(--cream);
       border: 1px solid var(--gold-line);
       border-radius: var(--radius-sm);
@@ -777,7 +843,9 @@
 
     /* ---------- why ---------- */
     .why {
-      background: var(--cream);
+      background:
+        radial-gradient(circle at 90% 20%, rgba(255, 204, 220, 0.28), transparent 30%),
+        var(--cream);
     }
 
     .why-wrap {
@@ -834,7 +902,8 @@
 
     /* ---------- process ---------- */
     .process {
-      background: var(--cream-2);
+      background:
+        linear-gradient(180deg, #FFF8FA 0%, #FFEFF3 100%);
       border-top: 1px solid var(--line);
       border-bottom: 1px solid var(--line);
     }
@@ -985,7 +1054,9 @@
 
     /* ---------- contact ---------- */
     .visit {
-      background: linear-gradient(160deg, var(--espresso) 0%, var(--wine-deep) 130%);
+      background:
+        radial-gradient(circle at 85% 15%, rgba(212, 175, 90, 0.16), transparent 28%),
+        linear-gradient(160deg, #35141F 0%, #8F2850 130%);
       color: var(--cream);
     }
 
@@ -1048,6 +1119,59 @@
       border-color: var(--gold);
       color: var(--gold);
       background: rgba(198, 161, 91, 0.1);
+    }
+
+    /* ---------- Google Maps ---------- */
+    .map-wrap {
+      margin-top: 42px;
+      padding: 8px;
+      background: linear-gradient(145deg, #FFFDFD, #FFE8EF);
+      border: 1px solid var(--gold-line);
+      border-radius: 16px;
+      box-shadow: 0 18px 40px rgba(184, 63, 105, 0.14);
+      overflow: hidden;
+    }
+
+    .map-wrap iframe {
+      width: 100%;
+      height: 380px;
+      display: block;
+      border: 0;
+      border-radius: 10px;
+    }
+
+    .map-caption {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 18px;
+      padding: 16px 10px 8px;
+      flex-wrap: wrap;
+    }
+
+    .map-caption p {
+      margin: 0;
+      color: var(--ink-soft);
+      font-size: 14px;
+    }
+
+    .map-caption strong {
+      color: var(--ink);
+      font-weight: 600;
+    }
+
+    @media (max-width: 599px) {
+      .map-wrap {
+        margin-top: 30px;
+      }
+
+      .map-wrap iframe {
+        height: 300px;
+      }
+
+      .map-caption .btn {
+        width: 100%;
+      }
     }
 
     /* ---------- footer ---------- */
@@ -1121,7 +1245,7 @@
       display: flex;
       gap: 10px;
       padding: 12px 16px;
-      background: rgba(27, 19, 16, 0.97);
+      background: rgba(53, 20, 31, 0.97);
       border-top: 1px solid var(--gold-line);
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
@@ -1337,6 +1461,34 @@
         font-size: 72px;
       }
     }
+
+    @media (max-width: 599px) {
+      .hero-stats {
+        width: 100%;
+        padding: 0 10px;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 0;
+      }
+
+      .hero-stats .stat {
+        flex: 1 1 0;
+        min-width: 0;
+        margin-right: 0;
+        padding: 14px 8px 0;
+        text-align: center;
+        border-right: 1px solid var(--line-cream);
+      }
+
+      .hero-stats .stat:last-child {
+        border-right: none;
+      }
+
+      .hero-stats .stat b,
+      .hero-stats .stat span {
+        text-align: center;
+      }
+    }
   </style>
 </head>
 
@@ -1345,7 +1497,9 @@
   <header id="siteHeader">
     <div class="nav">
       <a href="#top" class="brand">
-        <span class="mark">TG</span>
+        <span class="mark">
+          <img src="touchandglow.jpeg" alt="Touch N Glow logo">
+        </span>
         <span>Touch N Glow<small>Threading · Waxing · Skin</small></span>
       </a>
       <nav class="links">
@@ -1690,6 +1844,20 @@
     </section>
 
   </main>
+
+  <div class="map-wrap reveal">
+    <iframe
+      src="https://www.google.com/maps?q=145%20Forest%20Blvd%2C%20Suite%20430%2C%20Dawsonville%2C%20GA%2030534&output=embed"
+      title="Touch N Glow location on Google Maps" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+      allowfullscreen>
+    </iframe>
+    <div class="map-caption">
+      <p><strong>Touch N Glow</strong> · 145 Forest Blvd, Suite 430, Dawsonville, GA 30534</p>
+      <a class="btn btn-line"
+        href="https://www.google.com/maps/search/?api=1&query=145%20Forest%20Blvd%2C%20Suite%20430%2C%20Dawsonville%2C%20GA%2030534"
+        target="_blank" rel="noopener">Get directions</a>
+    </div>
+  </div>
 
   <footer>
     <div class="wrap reveal">
